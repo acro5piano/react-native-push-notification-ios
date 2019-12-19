@@ -408,7 +408,7 @@ RCT_EXPORT_METHOD(getInitialNotification:(RCTPromiseResolveBlock)resolve
                   reject:(__unused RCTPromiseRejectBlock)reject)
 {
   NSMutableDictionary<NSString *, id> *initialNotification =
-  [self.bridge.launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey] mutableCopy];
+  [[self.bridge.launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey] mutableCopy];
   
   UILocalNotification *initialLocalNotification =
   self.bridge.launchOptions[UIApplicationLaunchOptionsLocalNotificationKey];
